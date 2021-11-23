@@ -1,0 +1,30 @@
+.container{
+   margin-left: 3px;
+   align-items: center;
+   border: 1px solid rgb(122, 28, 199);
+   border-radius: 3px;
+   width: 75%;
+   height: 520px;
+   margin-left: 15%;
+   margin-top: 5%;
+}
+.container h5{
+   margin-top: 5px;
+   padding-bottom: 10px; 
+   border-bottom: 1px dashed rgb(122, 28, 199);
+}
+
+
+.form-group button{
+   background-color: white;
+   border: 1px solid #7f16d0;
+   color: black;
+}
+.form-group button:hover{
+   background-color: rgb(122, 28, 199);
+   color: white;
+}  
+
+#datePicker{
+   width: 250px;
+}

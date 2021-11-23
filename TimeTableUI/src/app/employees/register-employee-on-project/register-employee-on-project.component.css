@@ -1,0 +1,36 @@
+.container{
+   margin-left: 3px;
+   align-items: center;
+   border: 1px solid rgb(122, 28, 199);
+   border-radius: 3px;
+   width: 75%;
+   height: auto;
+   margin-left: 15%;
+   margin-top: 5%;
+}
+.container h5{
+   margin-top: 5px;
+   padding-bottom: 10px; 
+   border-bottom: 1px dashed rgb(122, 28, 199);
+}
+.form-group button:hover{
+background-color: rgb(122, 28, 199);
+color: white;
+}
+.form-group button{
+   width: 10px;
+   background-color: white;
+   border: 1px solid #7f16d0;
+   color: black;
+}
+#datePicker{
+   width: 418px;
+   margin-left: 0%;
+}
+#date-label{
+   margin-left: 0px;
+}
+.dropdown-menu {
+    max-height: 250px;
+    overflow-y: auto;
+}

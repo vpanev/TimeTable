@@ -1,0 +1,60 @@
+.container{
+   height: auto;
+   margin-left: 3px;
+   width: 1220px;
+}
+.card{
+   width: 100%;
+   height: 100px;
+   margin-bottom: 10px;
+}
+.card-body{
+   height: 100px;
+   margin-left: 100px;
+}
+.card-body h6{
+   margin-top: -85px;
+}
+.card-text2{
+   margin-left: -25%;
+   margin-top: -70px;
+   text-align: center;
+}
+.card-image{
+   margin-top: 13px;
+   margin-left: 5px;
+}
+.card-body button{
+   margin-left: 700px;
+   margin-top: -15%;
+   margin-bottom: 30px;
+   width: 100px;
+}
+#details-btn{
+   background-color: white;
+   color: black;
+   border: 1px solid #7f16d0;
+}
+#details-btn:hover{
+   background-image:  linear-gradient(to right, #aa2cb1, #7f16d0);
+   color: white;
+}
+#delete-btn{
+   background-color: white;
+   border: 1px solid red;
+   color: black;
+}
+#delete-btn:hover{
+   background-color: rgb(197, 7, 7);
+   color: white;
+}
+#register-emp-btn{
+   margin-top: -100px;
+   background-color: white;
+   color: black;
+   border: 1px solid #7f16d0;
+}
+#register-emp-btn:hover{
+   background-image:  linear-gradient(to right, #aa2cb1, #7f16d0);
+   color: white;
+}

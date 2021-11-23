@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+.container{
+   max-width: 100%;
+   height: auto;
+   background-color: rgb(237, 237, 237);
+}
+.data-container{
+   max-width: 1224px;
+   width: 1224px;
+   margin: -800px 0 0 280px;
+   height: 800px;
+}

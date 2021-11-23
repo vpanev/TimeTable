@@ -1,0 +1,65 @@
+<div class="container">
+   <h5>Регистрирай служител в проект</h5>
+   <form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)" class="col s12">
+      <input type="hidden" name="registerEmployee" [value]="employeeService.formData.employeeId" />
+
+      <div class="form-group" style="margin-left: 17.5%;">
+         <label class="col-md-3 form-control-label">Служител</label>
+         <div class="col-md-3">
+            <div class="btn-group">
+               <button data-bs-toggle="dropdown" type="button" class="btn btn-primary dropdown-toggle"
+                  style="width: 250px;">{{selectedValueEmployee}}<span class="caret"></span>
+               </button>
+               <ul class="dropdown-menu" style="width: 250px;">
+                  <li *ngFor="let item of employeeList" value="{{item.employeeName}}"
+                     (click)="selectValueEmployee(item)" class="dropdown-item">
+                     {{item.employeeName}} {{item.employeeSurname}} {{item.employeeLastname}}
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+
+      <div class="form-group" style="margin-left: 50%; margin-top: -86px;">
+         <label class="col-md-3 form-control-label">Проект</label>
+         <div class="col-md-4">
+            <div class="btn-group">
+               <button data-bs-toggle="dropdown" type="button" class="btn btn-primary dropdown-toggle"
+                  style="width: 250px;">{{selectedValueProject}}<span class="caret"></span>
+               </button>
+               <ul class="dropdown-menu" style="width: 250px;">
+                  <li *ngFor="let item of projectList" value="{{item.employeeName}}" (click)="selectValueProject(item)"
+                     class="dropdown-item">
+                     {{item.projectName}}
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+
+
+      <div class="form-group">
+         <label style="padding-left:10px">Дейност</label>
+         <input class="form-control form-control-lg" placeholder="Описание на дейността" name="clothName"
+            #clothName="ngModel" [(ngModel)]="employeeService.formData.employeeName" required style="width: 850px;">
+      </div>
+      <div class="form-row">
+         <div class="form-group col-md-6">
+            <label>Часове</label>
+            <input class="form-control form-control-lg" placeholder="Часове" name="clothType" #clothType="ngModel"
+               [(ngModel)]="employeeService.formData.employeeEgn">
+         </div>
+         <div class="form-group col-md-5">
+            <label id="date-label">Отчетна дата</label>
+            <input type="text" class="form-control form-control-lg" placeholder="Дата" bsDatepicker placement="top"
+               [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY', containerClass: 'theme-blue', showTodayButton: true }"
+               id="datePicker" [(ngModel)]="employeeService.formData.employeeHiredate" name="datePicker">
+         </div>
+      </div>
+      <div class="form-group">
+         <button class="btn btn-secondary btn-lg btn-block my-4" type="submit"
+            style="width: 63%; margin-top: -5px; margin-left: 19%;" id="register-btn">Регистрирай служител в
+            проект</button>
+      </div>
+   </form>
+</div>

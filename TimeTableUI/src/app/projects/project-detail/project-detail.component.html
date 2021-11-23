@@ -1,0 +1,33 @@
+<div class="container">
+   <filter-textbox (changed)="filter($event)"></filter-textbox>
+   <button class="btn btn-secondary" id="register-proj-btn" routerLink="/projects/register-project">Създай
+      проект</button>
+   <h5>ПРОЕКТИ</h5>
+   <div class="card" *ngFor="let item of filteredProjects">
+      <div class="card-body">
+         <h6 class="card-title">{{item.projectName}}</h6>
+         <p class="card-text">{{item.projectBegin | date}} - {{item.projectEnd | date}}</p>
+         <p class="card-text-status" *ngIf="item.projectStatus == 'W'">Завършен</p>
+         <p class="card-text-status2" *ngIf="item.projectStatus == 'N'">Незавършен</p>
+         <p class="card-text2">Описание : <br><br>{{item.projectDescription}}</p>
+         <div class="info">
+            <p class="hours-text">Максимални часове</p>
+            <div class="max-hours">{{item.projectMaxhours}}</div>
+            <p class="emp-text">Работници</p>
+            <div class="emp-count">123</div>
+         </div>
+         <button class="btn btn-secondary" id="edit-btn" routerLink="/projects/project-details-form">Редакция</button>
+         <button class="btn btn-secondary" style="margin-bottom: -10px;" id="details-btn">Преглед</button>
+         <button class="btn btn-secondary" style="margin-bottom: -16px;" id="del-btn"><i
+               class="fa fa-trash"></i></button>
+         <button class="btn btn-secondary" style="margin-top: -205px;" id="finish-btn" *ngIf="item.projectStatus == 'W'"
+            (click)="finishProject()"><i class="fa fa-check"></i></button>
+         <button class="btn btn-secondary" style="margin-top: -205px;" id="finish-btn" *ngIf="item.projectStatus == 'N'"
+            disabled><i class="fa fa-check"></i></button>
+
+      </div>
+   </div>
+   <p *ngIf="!filteredProjects || !filteredProjects.length"
+      style="text-align: center; font-size: 20px;margin-top: 35px;">Не са
+      открити проекти по зададените критерии</p>
+</div>

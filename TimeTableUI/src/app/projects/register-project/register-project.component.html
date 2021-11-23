@@ -1,0 +1,47 @@
+<div class="container">
+   <h5>Регистрирай проект</h5>
+   <form novalidate autocomplete="off" #form="ngForm" (submit)="onSubmit(form)" class="col s12">
+      <input type="hidden" name="registerProject" [value]="service.formData.projectId" />
+      <div class="form-group">
+         <label style="padding-left:10px">Име</label>
+         <input class="form-control form-control-lg" placeholder="Име" name="projectName" #projectName="ngModel"
+            [(ngModel)]="service.formData.projectName" required style="width: 850px;">
+      </div>
+      <div class="form-group">
+         <label style="padding-left:10px">Описание</label>
+         <input class="form-control form-control-lg" placeholder="Описание" name="projectDescription"
+            #projectDescription="ngModel" [(ngModel)]="service.formData.projectDescription" style="width: 850px;">
+      </div>
+      <div class="form-row">
+         <div class="form-group col-md-3">
+            <label>Максимални часове</label>
+            <input class="form-control form-control-lg" placeholder="Максимални часове" name="projectMaxHours"
+               #projectMaxHours="ngModel" [(ngModel)]="service.formData.projectMaxHours">
+         </div>
+         <div class="form-group col-md-3">
+            <label>Стартиране на проекта</label>
+            <input type="text" class="form-control form-control-lg" placeholder="Стартиране на проекта" bsDatepicker
+               placement="top"
+               [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY', containerClass: 'theme-blue', showTodayButton: true }"
+               id="datePicker" [(ngModel)]="service.formData.projectBegin" name="datePicker">
+         </div>
+         <div class="form-group col-md-3 ml-md-5">
+            <label>Край на проекта</label>
+            <input type="text" class="form-control form-control-lg" placeholder="Край на проекта" bsDatepicker
+               placement="top"
+               [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY', containerClass: 'theme-blue', showTodayButton: true }"
+               id="datePicker" [(ngModel)]="service.formData.projectEnd" name="datePicker">
+         </div>
+         <div class="form-group">
+            <input class="form-check-input" type="checkbox" value="" id="defaultCheck2" disabled checked>
+            <label class="form-check-label" for="defaultCheck2">
+               Незавършен
+            </label>
+         </div>
+      </div>
+      <div class="form-group">
+         <button class="btn btn-secondary btn-lg btn-block my-4" type="submit"
+            style="width: 100%; margin-top: -5px; margin-left: 5px;" id="register-btn">Създай проект</button>
+      </div>
+   </form>
+</div>

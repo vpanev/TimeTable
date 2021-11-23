@@ -1,0 +1,21 @@
+<div class="container">
+   <filter-textbox (changed)="filter($event)"></filter-textbox>
+   <button class="btn btn-secondary" id="register-emp-btn" routerLink="/employees/register-employee">Регистрирай
+      служител</button>
+   <div class="card">
+      <div class="card" *ngFor="let item of filteredEmployees"><img class="card-image" src="../../../assets/image.jpg"
+            alt="Card image cap" width="70px" height="70px" style="border-radius: 20px;">
+         <div class="card-body">
+            <h6 class="card-title">{{item.employeeName}} {{item.employeeSurname}} {{item.employeeLastname}}</h6>
+            <p class="card-text">{{item.employeeEgn}}</p>
+            <p class="card-text2">{{item.employeePosition}} <br> Дата на постъпване <br>{{item.employeeHiredate | date}}
+            </p>
+            <button class="btn btn-secondary" id="details-btn" routerLink="/employees/details-form">Детайли</button>
+            <button class="btn btn-secondary" style="margin-bottom: -10px;" id="delete-btn">Изтрий</button>
+         </div>
+      </div>
+      <p *ngIf="!filteredEmployees || !filteredEmployees.length"
+         style="text-align: center; font-size: 20px;margin-top: 35px;">Не са
+         открити служители по зададените критерии</p>
+   </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="container">
+   <div class="logged" *ngIf="false">
+      <app-login></app-login>
+   </div>
+   <div class="notlogged" *ngIf="true">
+      <app-left-side-nav></app-left-side-nav>
+      <div class="data-container">
+         <app-account-top-menu></app-account-top-menu>
+         <div class="data">
+            <router-outlet></router-outlet>
+         </div>
+      </div>
+   </div>
+</div>
